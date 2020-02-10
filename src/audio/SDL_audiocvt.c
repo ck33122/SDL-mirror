@@ -34,6 +34,10 @@
 #include "../SDL_dataqueue.h"
 #include "SDL_cpuinfo.h"
 
+// XXX: failed to determine by cmake
+#include <xmmintrin.h>
+#include <pmmintrin.h>
+
 #define DEBUG_AUDIOSTREAM 0
 
 #ifdef __SSE3__

@@ -24,6 +24,10 @@
 #include "../SDL_internal.h"
 #endif
 
+#if defined(__clang__)
+#include <cpuid.h>
+#endif
+
 #if defined(__WIN32__) || defined(__WINRT__)
 #include "../core/windows/SDL_windows.h"
 #endif
@@ -235,6 +239,11 @@ done:
         __asm mov b, ebx \
         __asm mov c, ecx \
         __asm mov d, edx \
+}
+#elif defined(__clang__)
+#define cpuid(func, a, b, c, d) \
+{ \
+    __cpuid(func, a, b, c, d); \
 }
 #elif defined(_MSC_VER) && defined(_M_X64)
 #define cpuid(func, a, b, c, d) \

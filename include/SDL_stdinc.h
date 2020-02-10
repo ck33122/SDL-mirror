@@ -30,6 +30,9 @@
 
 #include "SDL_config.h"
 
+// XXX: cmake failed to determine that
+#define HAVE_STDINT_H
+
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
 #endif
