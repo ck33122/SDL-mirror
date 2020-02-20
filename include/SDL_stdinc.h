@@ -31,7 +31,9 @@
 #include "SDL_config.h"
 
 // XXX: cmake failed to determine that
+#if defined(__WIN32__) && defined(__clang__)
 #define HAVE_STDINT_H
+#endif
 
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
