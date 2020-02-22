@@ -20,7 +20,9 @@
 */
 #include "../SDL_internal.h"
 
+#if defined(__clang__)
 #include <x86intrin.h>
+#endif
 
 #include "SDL_video.h"
 #include "SDL_blit.h"
